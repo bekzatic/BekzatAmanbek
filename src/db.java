@@ -13,7 +13,7 @@ public class db {
             conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connected to database");
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM patient");
+            rs = stmt.executeQuery("SELECT * FROM patient"); 
             System.out.println("\nAll patients:");
             while (rs.next()) {
                 System.out.println(
@@ -40,7 +40,8 @@ public class db {
             stmt.executeUpdate("UPDATE patient SET diagnosis='Recovered' WHERE patient_id = 302");
             System.out.println("\nPatient 302 updated");
             stmt.executeUpdate("DELETE FROM patient WHERE patient_id = 301");
-            System.out.println("Patient 301 deleted");rs = stmt.executeQuery("SELECT * FROM medical_professional WHERE age > 30");
+            System.out.println("Patient 301 deleted");
+            rs = stmt.executeQuery("SELECT * FROM medical_professional WHERE age > 30");
             System.out.println("\nMedical professionals older than 30:");
             while (rs.next()) {
                 System.out.println(
